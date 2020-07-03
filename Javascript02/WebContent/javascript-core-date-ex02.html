@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<script>
+    function checkDate() {
+        var s = document.getElementById("pDate").value;
+        var pDate = new Date(s);/* pDate 요소의 값으로 날짜 생성 */
+        var today = new Date();/* 현재 날짜 */
+
+        var diff = today.getTime() - pDate.getTime(); /* long - long */
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));/* Math.floor() = 버림 */
+        /* 1000*60초*60분*24시간 -> 하루 */
+
+        if (days > 30) {
+            alert(days + "일이 지나서 교환 불가.");
+        } else {
+            alert("교환 가능합니다.");
+        }
+    }
+</script>
+
+<body>
+    구입 날짜:
+    <input type="date" name="" id="pDate">
+    <button onclick="checkDate()">검사</button>
+</body>
+
+</html>

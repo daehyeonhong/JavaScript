@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function isConfirm() {
+            var yesNo = confirm("정말 탈퇴하시겠습니까?");
+            alert(yesNo ? "탈퇴 처리 완료" : "탈퇴 요청 취소");
+            if (yesNo) {//yesNo == true
+                document.write("탈퇴 처리");
+            } else {
+                document.write("탈퇴 취소");
+            }
+        }
+    </script>
+    <button onclick="isConfirm()">탈퇴</button>
+</body>
+
+</html>
