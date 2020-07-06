@@ -7,13 +7,18 @@
   </head>
   <body>
     <ul>
+<<<<<<< HEAD
       <li>List Item 1</li>
+=======
+      <li>List Item 1<span>값</span></li>
+>>>>>>> 274eb37ccb3840f8c5f6bccd0725b95f8ddf7f67
       <li>List Item 2</li>
       <li>List Item 3</li>
       <li>List Item 4</li>
       <li>List Item 5</li>
     </ul>
     <script>
+<<<<<<< HEAD
       var list = document.getElementsByTagName(
         "ul"
       )[0]; /* 여러개 ul중 첫번째 ul 요소 얻기 */
@@ -21,6 +26,14 @@
 
       for (var i = 0; i < allItem.length; i++) {
         alert(allItem[i].firstChild.data);
+=======
+      var list = document.getElementsByTagName("ul")[0];
+      /* 여러개 ul중 첫번째 ul 요소 얻기 */
+      var allItem = list.getElementsByTagName("li");
+
+      for (var i = 0; i < allItem.length; i++) {
+        alert(allItem[i].firstChild.data); /* 노드 내의 첫번째 요소.data */
+>>>>>>> 274eb37ccb3840f8c5f6bccd0725b95f8ddf7f67
       }
     </script>
   </body>
