@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function get() {
+        var val = document.getElementById("ex").innerHTML; /* div, span */
+        alert(val);
+      }
+      function set(msg) {
+        document.getElementById("ex").innerHTML = msg; /* div, span */
+      }
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="ex">여기가 div로 선언되었습니다.</div>
+    <a href="#" onclick="get()">div요소 내용 출력하기</a><br />
+    <a href="#" onclick="set('변경되었습니다.')">div 요소 내용 변경하기.</a>
+  </body>
+</html>

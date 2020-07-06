@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function addText(t) {
+        /* createTextNode:function(){} */
+        if (document.createTextNode) {      
+          alert("CreateTextNode라는 이름을 가진 요소가 있습니다.");
+          var node = document.createTextNode(t);
+          document.getElementById("target").appendChild(node);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div
+      id="target"
+      onclick="addText('동적으로 텍스트가 추가됩니다.')"
+      style="font: 20px bold;"
+    >
+      여기를 클릭하세요.
+    </div>
+  </body>
+</html>
