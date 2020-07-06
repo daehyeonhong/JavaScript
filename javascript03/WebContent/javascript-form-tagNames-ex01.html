@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>태그 명으로 요소 찾기</title>
+  </head>
+  <body>
+    <ul>
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+      <li>List Item 4</li>
+      <li>List Item 5</li>
+    </ul>
+    <script>
+      var list = document.getElementsByTagName(
+        "ul"
+      )[0]; /* 여러개 ul중 첫번째 ul 요소 얻기 */
+      var allItem = list.getElementsByTagName("li");
+
+      for (var i = 0; i < allItem.length; i++) {
+        alert(allItem[i].firstChild.data);
+      }
+    </script>
+  </body>
+</html>
