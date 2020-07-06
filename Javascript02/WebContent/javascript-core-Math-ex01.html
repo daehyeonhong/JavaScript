@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math</title>
+    <script>
+      /* var 변수; -> 로컬 변수 */
+      /* 변수; -> 전역 변수(global 변수) */
+      function calc(type) {
+        x = Number(document.calculator.number.value);
+        if (type == 1) {
+          y = Math.sin((x * Math.PI) / 180.0);
+        } else if (type == 2) {
+          y = Math.log(x);
+        } else if (type == 3) {
+          y = Math.sqrt(x);
+        } else if (type == 4) {
+          y = Math.abs(x);
+        }
+
+        /* 변수 y 선언시 var 키워드 없이 선언하면 y는 전역 변수 */
+        /* if() 블럭내에서 선언되어도, 블럭 밖에서 사용 가능 */
+        document.calculator.total.value = y;
+      }
+    </script>
+  </head>
+  <body>
+    <form action="" name="calculator">
+      입력: <input type="text" name="number" id="" /><br />
+      계산 결과: <input type="text" name="total" id="" /><br />
+      <input type="button" value="SIN" onclick="calc(1)" />
+      <input type="button" value="LOG" onclick="calc(2)" />
+      <input type="button" value="SQRT" onclick="calc(3)" />
+      <input type="button" value="ABS" onclick="calc(4)" />
+    </form>
+  </body>
+</html>
