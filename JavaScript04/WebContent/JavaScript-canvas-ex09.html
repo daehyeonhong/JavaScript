@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Canvas</title>
+<style>
+body {
+	margin: 0px;
+	padding: 0px;
+}
+</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="50000px" height="5000px"> </canvas>
+	<script>
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext("2d");
+
+		var image = new Image(); /* Image객체 생성 */
+		image.src = "./resources/images/a32aa522d33b48aba6786dd451116ced.jpg";
+		image.onload = function() {
+			var pattern = context.createPattern(image, "repeat");
+
+			context.rect(0, 0, canvas.width, canvas.height);
+			context.fillStyle = pattern;
+			context.fill();
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+    <style>
+      canvas {
+        background: yellow;
+        border: 1px dotted black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="300" height="200"> </canvas>
+    <script>
+      var dx = 5;
+      var dy = 5;
+      var y = 100;
+      var x = 100;
+      var context;
+      function draw() {
+        var canvas = document.getElementById("myCanvas");
+        context = canvas.getContext("2d");
+
+        context.clearRect(0, 0, 300, 200);
+
+        context.beginPath();
+        context.fillStyle = "red";
+        context.arc(x, y, 20, 0, Math.PI * 2, true);
+        context.closePath();
+        context.fill();
+        if (x < 0 + 20 || x > 300 - 20) {
+          dx = -dx;
+          x;
+        }
+        if (y < 0 + 20 || y > 200 - 20) {
+          dy = -dy;
+          y;
+        }
+        x += dx; /* 이동간격이 5px */
+        y += dy; /* 이동간격이 5px */
+      }
+      setInterval(draw, 1); /* setInterval(콜백함수,밀리초); */
+    </script>
+  </body>
+</html>
