@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          var div = $("div");
+          div.animate({ left: "100px", width: "+=100px" }, "slow");
+          div.animate({ fontSize: "3em" }, "slow");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>Start Animation</button>
+    <p>요소 처리 animate() 동시 실행</p>
+    <div
+      style="
+        background: #98df21;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+      "
+    >
+      HELLO
+    </div>
+  </body>
+</html>
