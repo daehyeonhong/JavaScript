@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQuery</title>
+    <style>
+      div.out {
+        width: 235px;
+        height: 95px;
+        background-color: yellow;
+      }
+    </style>
+    <!-- 라이브러리 사용 준비 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <div class="out">
+      <p>마우스를 🐱‍🐉여기로 움직이세요.</p>
+      <br />
+      <p>0</p>
+    </div>
+    <script>
+      var i = 0; /* 전역 변수 */
+      /* $(요소).[이벤트 핸들러 함수(function)] */
+      $("div.out").mouseover(function () {
+        $("p:first", this).text(
+          "🐱‍🐉mouse over🐱‍🐉"
+        ); /* text(내용) 요소에 text로 추가 */
+        $("p:last", this).text(++i);
+      });
+    </script>
+  </body>
+</html>
