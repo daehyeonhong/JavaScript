@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQuery</title>
+    <style>
+      p {
+        background: yellow;
+      }
+      .container {
+        height: 80px;
+        width: 200px;
+        border: 1px solid red;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#button1").click(function () {
+          $(".container").remove(); /* 삭제 */
+        });
+        $("#button2").click(function () {
+          $(".container").empty(); /* 내용 비우기 */
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="button1">remove()</button>
+    <button id="button2">empty()</button>
+    <br />
+
+    <div class="container">
+      <p class="hello">Hello</p>
+      <p class="goodbye">Goodbye</p>
+    </div>
+  </body>
+</html>
