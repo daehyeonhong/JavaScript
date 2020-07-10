@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQuery</title>
+
+    <style>
+      .g * {
+        padding: 5px;
+        margin: 15px;
+        border: 2px solid lightgray;
+        color: lightgray;
+        display: block;
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("h2").next().css({ color: "green", border: "2px solid blue" });
+      });
+    </script>
+  </head>
+  <body class="g" style="width: 500px;">
+    <div>
+      div (parent)
+      <p>p</p>
+      <span>span</span>
+      <h2>h2</h2>
+      <h3>h3</h3>
+      <p>p</p>
+    </div>
+  </body>
+</html>

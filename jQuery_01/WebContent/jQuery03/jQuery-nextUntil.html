@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQuery</title>
+    <style>
+      .g * {
+        display: block;
+        border: 2px solid lightgray;
+        color: lightgray;
+        margin: 15px;
+        padding: 5px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        /* 시작과 끝 요소 제외 */
+        $("h2").nextUntil("h6").css({ border: " 2px solid red", color: "red" });
+      });
+    </script>
+  </head>
+  <body class="g">
+    <div>
+      div (parent)
+      <p>p</p>
+      <span>span</span>
+      <h2>h2</h2>
+      <h3>h3</h3>
+      <h4>h4</h4>
+      <h5>h5</h5>
+      <h6>h6</h6>
+      <p>p</p>
+    </div>
+  </body>
+</html>
