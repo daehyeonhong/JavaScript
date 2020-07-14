@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8" />
-<title>Insert title here</title>
-<script>
-	function getFromserver() {
-		var req;
-		/* XMLHttpRequest()객체 얻기 */
-		if (window.XMLHttpRequest) {
-			/* code for IE7++ || FireFox || Chrome || Opera || Safari */
-			req = new XMLHttpRequest();
-		} else {
-			/* code for IE6-- */
-			req = new ActiveXObject("Microsoft.XMLHTTP");
-		}
-		/* onreadystatechange에 콜백 함수 추가 */
-		req.onreadystatechange = function() {
-			if (req.readyState == 4 && req.status == 200) {
-				document.getElementById("target").innerHTML = req.responseText;
-			}
-		}; /* 준비 open(전송방식, 요청 리소스, 비동기 여부(true_비동기, false_동기)) */
-		req.open("GET", "testFile.txt", true);
-		/* 요청 객체 전송 */
-		req.send();
-	}
-</script>
-</head>
-<body>
-	<div id="target"
-		style="width: 300px; height: 60px; border: 1px solid #000;"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script>
+      function getFromServer() {
+        var req;
+        /* XMLHttpRequest()객체 얻기 */
+        if (window.XMLHttpRequest) {
+          /* code for IE7++ || FireFox || Chrome || Opera || Safari */
+          req = new XMLHttpRequest();
+        } else {
+          /* code for IE6-- */
+          req = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        /* onreadystatechange에 콜백 함수 추가 */
+        req.onreadystatechange = function () {
+          if (req.readyState == 4 && req.status == 200) {
+            document.getElementById("target").innerHTML = req.responseText;
+          }
+        }; /* 준비 open(전송방식, 요청 리소스, 비동기 여부(true_비동기, false_동기)) */
+        req.open("GET", "testFile.txt", true);
+        /* 요청 객체 전송 */
+        req.send();
+      }
+    </script>
+  </head>
+  <body>
+    <div
+      id="target"
+      style="width: 300px; height: 60px; border: 1px solid #000;"
+    ></div>
 
-	<button type="button" onclick="getFromserver()">GET DATA</button>
-</body>
+    <button type="button" onclick="getFromServer()">GET DATA</button>
+  </body>
 </html>

@@ -3,7 +3,7 @@ added in ES 5
 use this for Vanila JavaScript */
 "use scrict";
 
-/* 2. Variable
+/* 2. Variable, rw[read/write]
 let (added in ES6)
 mutable */
 
@@ -26,17 +26,25 @@ console.log(globalName);
 }
 console.log(age);
 
-/* 3. Constants
+/* 3. Constant, r[read only]
+use const whenever possible.
+only ues let if variable needs to change.
+*/
+
+const daysInWeek = 7;
+const maxNumber = 5;
+
+/* Note!
+Immutable data types: premitive types, frozen objects (I.E. object.freeze())
+Mutable data types: all objects by default are mutable in JS
 favor immutable date type always for a few reasons;
  - security
  - thread safety
  - reduce human mistakes */
 
-const daysInWeek = 7;
-const maxNumber = 5;
-
 /* 4. Variable types
- primitive, single item: number, string, boolean, null, undefined, symbol, object, box container
+ primitive, single item: number, string, boolean, null, undefined, symbol
+ object, box container
  function, first-class function */
 
 const count = 17; /* integer */
@@ -89,6 +97,10 @@ const gSymbol1 = Symbol.for("id");
 const gSymbol2 = Symbol.for("id");
 console.log(gSymbol1 === gSymbol2); /* true */
 console.log(`value: ${symbol1.description}, ${typeof symbol1}`);
+
+/* object, real-life object, data structure */
+const hong = { name: "hong", age: 20 };
+hong.age = 21;
 
 /* 5. Dynamic typing: dynamically typed language */
 let text = "hello";
