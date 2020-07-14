@@ -80,3 +80,24 @@ console.log(`value: ${nothing}, type: ${typeof nothing}`);
 /* undefined */
 let x;
 console.log(`value: ${x}, type: ${typeof x}`);
+
+const symbol1 = Symbol("id");
+const symbol2 = Symbol("id");
+console.log(symbol1 === symbol2);
+
+const gSymbol1 = Symbol.for("id");
+const gSymbol2 = Symbol.for("id");
+console.log(gSymbol1 === gSymbol2); /* true */
+console.log(`value: ${symbol1.description}, ${typeof symbol1}`);
+
+/* 5. Dynamic typing: dynamically typed language */
+let text = "hello";
+console.log(text.charAt(0)); /* h */
+console.log(`value: ${text}, type: ${typeof text}`);
+text = 1;
+console.log(`value: ${text}, type: ${typeof text}`);
+text = "7" + 5;
+console.log(`value: ${text}, type: ${typeof text}`);
+text = "8" / "2";
+console.log(`value: ${text}, type: ${typeof text}`);
+console.log(text.charAt(0)); /* error */
