@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>JQuery</title>
-    <style>
-      body {
-        background: #eef;
-      }
-      div {
-        padding: 20px;
-      }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(document).mousemove(function (e) {
-          $("#log").text("e.pageX:" + e.pageX + "e.pageY" + e.pageY);
-        });
-      });
-    </script>
-  </head>
-  <body>
-    <div id="log"></div>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<title>JQuery</title>
+<style>
+body {
+	background: #eef;
+}
+
+div {
+	padding: 20px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+	$().ready(function() {
+		$(document).mousemove(function(e) {
+			$("#log").text("e.pageX:" + e.pageX + "e.pageY" + e.pageY);
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="log"></div>
+</body>
 </html>

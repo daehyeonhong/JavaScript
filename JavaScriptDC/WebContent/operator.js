@@ -14,8 +14,8 @@ console.log(2 ** 3); /* exponentiation */
 /* 3. Increament and Decrement operators */
 let counter = 2;
 const preIncrement = ++counter;
-/* counter=counter+1;
-preIncrement=counter; */
+/*counter=counter+1;*/
+/*preIncrement=counter;*/
 console.log(`preIncrement: ${preIncrement}, counter: ${counter}`);
 const postIncrement = counter++;
 console.log(`preIncrement: ${postIncrement}, counter: ${counter}`);
