@@ -7,7 +7,7 @@ if (10 === 5) {
 if (20 > 5 && 'a' === 'a') {
   console.log('yes');
 } else {
-  console.log('no');
+  console.log('no!');
 }
 
 const age = prompt('How old are you?');
