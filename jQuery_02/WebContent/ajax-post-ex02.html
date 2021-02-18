@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+	$().ready(function() {
+		$('button').click(function() {
+			$.post('demo_test_post.jsp', {
+				name : 'Donald Duck',
+				city : 'Duckburg',
+				age : 99,
+				job : "programmer"
+			}, function(data, status) {
+				alert('Data: ' + data + '\nStatus: ' + status);
+				$("#div1").text(data);
+			}); /* post 요청 */
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="div1"></div>
+	<button>Send an HTTP POST request to a page and get the result
+		back</button>
+</body>
+</html>

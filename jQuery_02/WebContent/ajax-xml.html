@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<style type="text/css">
+table td {
+	border: 1px solid #000;
+}
+
+table th {
+	border: 1px solid #000;
+}
+
+table {
+	border: 1px solid #000;
+}
+</style>
+</head>
+<body>
+	<h2>The XMLHTTPRequest Object</h2>
+	<button type="button" onclick="loadDoc()">Get my CD collection</button>
+	<br />
+	<br />
+	<table id="demo"></table>
+	<script>
+		function loadDoc() {
+			let xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					myFunction(this); /* 함수 호출 하면서 XMLHttpRequest 자신을 넘김 */
+				}
+			};
+			xhttp.open("GET", "cd_catalog.xml", true);
+			xhttp.send();
+		}
+		function myFunction(xml) {
+			let i;
+			let xmlDoc = xml.responseXML;/* xml요청시 */
+			let table = "<tr><th>Artist</th><th>Title</th></tr>";
+			let x = xmlDoc.getElementsByTagName("CD");
+			for (let i = 0; i < x.length; i++) {
+				table += "<tr><td>"
+						+ x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue
+						+ "</td><td>"
+						+ x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue
+						+ "</td></tr>";
+			}
+			alert(table);
+			document.getElementById("demo").innerHTML = table;
+		}
+	</script>
+</body>
+</html>

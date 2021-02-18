@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        /* 요소.on({이벤트: 무명함수}); */
+        $("p").on({
+          mouseenter: function () {
+            $(this).css("background-color", "lightgray");
+          },
+          mouseleave: function () {
+            $(this).css("background-color", "lightblue");
+          },
+          click: function () {
+            $(this).css("background-color", "yellow");
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>클릭 무브 Enter Event</p>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>The XMLHttpRequest Object</h2>
+
+	<button type="button" onclick="loadDoc()">Request data</button>
+
+	<p id="demo"></p>
+
+	<script>
+		function loadDoc() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("demo").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("POST", "loginPro.jsp", true);
+			/* form형식처럼 데이터 전송 */
+			xhttp.setRequestHeader("Content-type",
+					"application/x-www-form-urlencoded");
+			/* 전송할 파라미터 */
+			xhttp.send("id=hong&pwd=1234");
+		}
+	</script>
+
+</body>
+</html>
